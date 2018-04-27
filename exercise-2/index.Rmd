@@ -1,0 +1,34 @@
+---
+title: "Participation 5"
+output: html_document
+---
+
+The "cars" dataset includes information about the relationship between the 
+speed a car is going in miles per hour and the distance in feet that it takes
+the car to stop. This data was recorded in 1920. There are 50 observations.
+
+```{r}
+library(knitr)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r} 
+source("analysis.R")
+```
+
+## Histogram for the frequency of the cars' speeds
+
+```{r, echo=FALSE}
+make_hist()
+```
+
+
+The mean speed is `r mean_speed`. 
+
+```{r}
+names(cars_styled) <- c("Speed", "Distance to Stop")
+cars_styled %>% kable()
+```
